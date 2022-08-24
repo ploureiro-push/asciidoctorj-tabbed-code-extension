@@ -1,4 +1,4 @@
-= AsciidoctorJ tabbed code extension image:https://travis-ci.org/bmuschko/asciidoctorj-tabbed-code-extension.svg?branch=master["Build Status", link="https://travis-ci.org/bmuschko/asciidoctorj-tabbed-code-extension"]
+= AsciidoctorJ tabbed code extension image:https://travis-ci.org/ploureiro-push/asciidoctorj-tabbed-code-extension.svg?branch=master["Build Status", link="https://travis-ci.org/ploureiro-push/asciidoctorj-tabbed-code-extension"]
 
 This AsciidoctorJ extension can render code on multiple tabs. The functionality is particularly useful if you want to demonstrate a code example in different languages or tools, as shown in the following two images.
 
@@ -7,15 +7,15 @@ image::images/tabbed-code-kotlin.png[Kotlin tab,500]
 
 == Using the extension
 
-All you need to do to use the extension is to add it to the link:https://repo1.maven.org/maven2/com/bmuschko/asciidoctorj-tabbed-code-extension/[dependency from Maven Central]. The following two examples demonstrate the use of version 0.3 from Maven and Gradle.
+All you need to do to use the extension is to add it to the link:https://repo1.maven.org/maven2/com/ploureiro-push/asciidoctorj-tabbed-code-extension/[dependency from Maven Central]. The following two examples demonstrate the use of version 0.4 from Maven and Gradle.
 
 .pom.xml
 [source,xml]
 ----
 <dependency>
-    <groupId>com.bmuschko</groupId>
+    <groupId>com.pushtechnology.internal.diffusion.documentation.tools</groupId>
     <artifactId>asciidoctorj-tabbed-code-extension</artifactId>
-    <version>0.3</version>
+    <version>0.4</version>
     <scope>runtime</scope>
 </dependency>
 ----
@@ -24,7 +24,7 @@ All you need to do to use the extension is to add it to the link:https://repo1.m
 [source,groovy]
 ----
 dependencies {
-    runtimeOnly("com.bmuschko:asciidoctorj-tabbed-code-extension:0.3")
+    runtimeOnly("com.pushtechnology.internal.diffusion.documentation.tools:asciidoctorj-tabbed-code-extension:0.4")
 }
 ----
 
@@ -69,8 +69,8 @@ By default, the extension provides a JavaScript and CSS file that already takes 
 
 |===
 |Attribute              |Default Value          |Description
-|`tabbed-code-js-path`  |https://github.com/bmuschko/asciidoctorj-tabbed-code-extension/blob/master/src/main/resources/codeBlockSwitch.js[`/codeBlockSwitch.js`] |The JavaScript controlling the behavior read from the runtime classpath.
-|`tabbed-code-css-path` |https://github.com/bmuschko/asciidoctorj-tabbed-code-extension/blob/master/src/main/resources/codeBlockSwitch.css[`/codeBlockSwitch.css`] |The CSS controlling the styling read from the runtime classpath.
+|`tabbed-code-js-path`  |https://github.com/ploureiro-push/asciidoctorj-tabbed-code-extension/blob/master/src/main/resources/codeBlockSwitch.js[`/codeBlockSwitch.js`] |The JavaScript controlling the behavior read from the runtime classpath.
+|`tabbed-code-css-path` |https://github.com/ploureiro-push/asciidoctorj-tabbed-code-extension/blob/master/src/main/resources/codeBlockSwitch.css[`/codeBlockSwitch.css`] |The CSS controlling the styling read from the runtime classpath.
 |===
 
 The following example shows how to use the CSS attributes to provide custom styling in a Gradle build using the Kotlin DSL.

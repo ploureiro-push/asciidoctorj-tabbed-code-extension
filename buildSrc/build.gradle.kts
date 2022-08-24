@@ -19,12 +19,12 @@ kotlinDslPluginOptions {
 gradlePlugin {
     plugins {
         register("additional-artifacts-plugin") {
-            id = "com.bmuschko.asciidoctorj.tabbedcode.additional-artifacts"
-            implementationClass = "com.bmuschko.asciidoctorj.tabbedcode.AdditionalArtifactsPlugin"
+            id = "com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.additional-artifacts"
+            implementationClass = "com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.AdditionalArtifactsPlugin"
         }
         register("publishing-plugin") {
-            id = "com.bmuschko.asciidoctorj.tabbedcode.publishing"
-            implementationClass = "com.bmuschko.asciidoctorj.tabbedcode.PublishingPlugin"
+            id = "com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.publishing"
+            implementationClass = "com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.PublishingPlugin"
         }
     }
 }

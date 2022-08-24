@@ -1,11 +1,11 @@
 plugins {
     `java-library`
-    id("com.bmuschko.asciidoctorj.tabbedcode.additional-artifacts")
-    id("com.bmuschko.asciidoctorj.tabbedcode.publishing")
+    id("com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.additional-artifacts")
+    id("com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.publishing")
 }
 
-group = "com.bmuschko"
-version = "0.3"
+group = "com.pushtechnology.internal.diffusion.documentation.tools"
+version = "0.4"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8

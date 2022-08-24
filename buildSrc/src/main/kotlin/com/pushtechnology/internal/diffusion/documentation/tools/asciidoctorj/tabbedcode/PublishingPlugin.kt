@@ -1,4 +1,4 @@
-package com.bmuschko.asciidoctorj.tabbedcode
+package com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode
 
 import com.jfrog.bintray.gradle.BintrayExtension
 import com.jfrog.bintray.gradle.BintrayPlugin
@@ -40,13 +40,13 @@ class PublishingPlugin : Plugin<Project> {
                     pom {
                         name.set("AsciidoctorJ tabbed code extension")
                         description.set("An AsciidoctorJ extension for rendering code on multiple tabs.")
-                        url.set("https://github.com/bmuschko/asciidoctorj-tabbed-code-extension")
+                        url.set("https://github.com/ploureiro-push/asciidoctorj-tabbed-code-extension")
                         inceptionYear.set("2018")
 
                         scm {
-                            url.set("https://github.com/bmuschko/asciidoctorj-tabbed-code-extension")
-                            connection.set("scm:https://bmuschko@github.com/bmuschko/asciidoctorj-tabbed-code-extension.git")
-                            developerConnection.set("scm:git://github.com/bmuschko/asciidoctorj-tabbed-code-extension.git")
+                            url.set("https://github.com/ploureiro-push/asciidoctorj-tabbed-code-extension")
+                            connection.set("scm:https://ploureiro-push@github.com/ploureiro-push/asciidoctorj-tabbed-code-extension.git")
+                            developerConnection.set("scm:git://github.com/ploureiro-push/asciidoctorj-tabbed-code-extension.git")
                         }
 
                         licenses {
@@ -59,9 +59,9 @@ class PublishingPlugin : Plugin<Project> {
 
                         developers {
                             developer {
-                                id.set("bmuschko")
-                                name.set("Benjamin Muschko")
-                                url.set("https://github.com/bmuschko")
+                                id.set("ploureiro-push")
+                                name.set("Pedro Loureiro")
+                                url.set("https://github.com/ploureiro-push")
                             }
                         }
                     }
@@ -82,13 +82,13 @@ class PublishingPlugin : Plugin<Project> {
                 repo = "maven"
                 name = "asciidoctorj-tabbed-code-extension"
                 desc = "An AsciidoctorJ extension for rendering code on multiple tabs."
-                websiteUrl = "https://github.com/bmuschko/${project.name}"
-                issueTrackerUrl = "https://github.com/bmuschko/${project.name}/issues"
-                vcsUrl = "https://github.com/bmuschko/${project.name}.git"
+                websiteUrl = "https://github.com/ploureiro-push/${project.name}"
+                issueTrackerUrl = "https://github.com/ploureiro-push/${project.name}/issues"
+                vcsUrl = "https://github.com/ploureiro-push/${project.name}.git"
                 setLicenses("Apache-2.0")
                 setLabels("asciidoc", "asciidoctor", "extension")
                 publicDownloadNumbers = true
-                githubRepo = "bmuschko/${project.name}"
+                githubRepo = "ploureiro-push/${project.name}"
 
                 version(closureOf<BintrayExtension.VersionConfig> {
                     released = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZZ").format(Date())

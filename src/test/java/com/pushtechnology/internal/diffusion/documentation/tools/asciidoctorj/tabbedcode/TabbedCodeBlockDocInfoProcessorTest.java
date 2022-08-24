@@ -1,4 +1,4 @@
-package com.bmuschko.asciidoctorj.tabbedcode;
+package com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode;
 
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.OptionsBuilder;
@@ -25,13 +25,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.bmuschko.asciidoctorj.tabbedcode.FileUtils.LINE_SEPARATOR;
-import static com.bmuschko.asciidoctorj.tabbedcode.FileUtils.readFileContentsFromClasspath;
-import static com.bmuschko.asciidoctorj.tabbedcode.TabbedCodeBlockDocinfoProcessor.*;
+import static com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.FileUtils.*;
+import static com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.TabbedCodeBlockDocInfoProcessor.*;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TabbedCodeBlockDocinfoProcessorTest {
+public class TabbedCodeBlockDocInfoProcessorTest {
     private static final String CUSTOM_CSS_FILE_PATH = "/customStyling.css";
     private static final String CUSTOM_JS_FILE_PATH = "/customBehavior.js";
 
@@ -53,8 +52,8 @@ public class TabbedCodeBlockDocinfoProcessorTest {
         addPathToClassloader(customCssPath.getParent());
 
         Map<String, Object> attributes = new HashMap<>();
-        attributes.put(TABBED_CODE_CSS_FILE_PATH_ATTRIBUTE, CUSTOM_CSS_FILE_PATH);
-        attributes.put(TABBED_CODE_JS_FILE_PATH_ATTRIBUTE, CUSTOM_JS_FILE_PATH);
+        attributes.put(TABBED_CODE_CSS_FILE_PATH_ATTRIBUTE, getURLForResource(CUSTOM_CSS_FILE_PATH).getPath());
+        attributes.put(TABBED_CODE_JS_FILE_PATH_ATTRIBUTE, getURLForResource(CUSTOM_JS_FILE_PATH).getPath());
         OptionsBuilder optionsBuilder = createOptionBuilder().attributes(attributes);
         String result = convert(optionsBuilder);
         verifyConvertedHtml(result, CUSTOM_CSS_FILE_PATH, CUSTOM_JS_FILE_PATH);
@@ -70,7 +69,7 @@ public class TabbedCodeBlockDocinfoProcessorTest {
 
     private static String convert(OptionsBuilder optionsBuilder) {
         Asciidoctor asciidoctor = Asciidoctor.Factory.create();
-        asciidoctor.javaExtensionRegistry().docinfoProcessor(TabbedCodeBlockDocinfoProcessor.class);
+        asciidoctor.javaExtensionRegistry().docinfoProcessor(TabbedCodeBlockDocInfoProcessor.class);
         return asciidoctor.convert(getAsciiDoc(), optionsBuilder);
     }
 

@@ -1,4 +1,4 @@
-package com.bmuschko.asciidoctorj.tabbedcode
+package com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

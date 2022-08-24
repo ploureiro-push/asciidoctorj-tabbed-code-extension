@@ -1,14 +1,15 @@
-package com.bmuschko.asciidoctorj.tabbedcode;
+package com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode;
 
 import org.asciidoctor.ast.Document;
 import org.asciidoctor.extension.DocinfoProcessor;
 
 import java.util.Map;
 
-import static com.bmuschko.asciidoctorj.tabbedcode.FileUtils.LINE_SEPARATOR;
-import static com.bmuschko.asciidoctorj.tabbedcode.FileUtils.readFileContentsFromClasspath;
+import static com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.FileUtils.LINE_SEPARATOR;
+import static com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.FileUtils.readFileContentsFromPath;
+import static com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode.FileUtils.getURLForResource;
 
-public class TabbedCodeBlockDocinfoProcessor extends DocinfoProcessor {
+public class TabbedCodeBlockDocInfoProcessor extends DocinfoProcessor {
     public static final String TABBED_CODE_CSS_FILE_PATH_ATTRIBUTE = "tabbed-code-css-path";
     public static final String TABBED_CODE_JS_FILE_PATH_ATTRIBUTE = "tabbed-code-js-path";
     public static final String DEFAULT_CSS_FILE_PATH = "/codeBlockSwitch.css";
@@ -18,10 +19,10 @@ public class TabbedCodeBlockDocinfoProcessor extends DocinfoProcessor {
     public String process(Document document) {
         if (document.isBasebackend("html")) {
             Map<String, Object> attributes = document.getAttributes();
-            String cssPath = getCssPath(attributes, TABBED_CODE_CSS_FILE_PATH_ATTRIBUTE, DEFAULT_CSS_FILE_PATH);
-            String jsPath = getCssPath(attributes, TABBED_CODE_JS_FILE_PATH_ATTRIBUTE, DEFAULT_JS_FILE_PATH);
-            String css = readFileContentsFromClasspath(cssPath);
-            String js = readFileContentsFromClasspath(jsPath);
+            String cssPath = getCssPath(attributes, TABBED_CODE_CSS_FILE_PATH_ATTRIBUTE, getURLForResource(DEFAULT_CSS_FILE_PATH).getPath());
+            String jsPath = getCssPath(attributes, TABBED_CODE_JS_FILE_PATH_ATTRIBUTE, getURLForResource(DEFAULT_JS_FILE_PATH).getPath());
+            String css = readFileContentsFromPath(cssPath);
+            String js = readFileContentsFromPath(jsPath);
             return modifyHeadHtml(css, js);
         }
 

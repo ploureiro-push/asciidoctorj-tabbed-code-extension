@@ -1,4 +1,4 @@
-package com.bmuschko.asciidoctorj.tabbedcode;
+package com.pushtechnology.internal.diffusion.documentation.tools.asciidoctorj.tabbedcode;
 
 import org.asciidoctor.Asciidoctor;
 import org.asciidoctor.extension.JavaExtensionRegistry;
@@ -8,6 +8,6 @@ public class TabbedCodeBlockExtension implements ExtensionRegistry {
     @Override
     public void register(Asciidoctor asciidoctor) {
         JavaExtensionRegistry javaExtensionRegistry = asciidoctor.javaExtensionRegistry();
-        javaExtensionRegistry.docinfoProcessor(TabbedCodeBlockDocinfoProcessor.class);
+        javaExtensionRegistry.docinfoProcessor(TabbedCodeBlockDocInfoProcessor.class);
     }
 }
