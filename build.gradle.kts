@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.pushtechnology.internal.diffusion.documentation.tools"
-version = "0.4"
+version = "0.4.1"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
